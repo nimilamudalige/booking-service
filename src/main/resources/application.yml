@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: booking-service
+  config:
+    import: optional:configserver:${CONFIG_SERVER_URL:http://localhost:8888}
+  cloud:
+    config:
+      fail-fast: false
+      retry:
+        max-attempts: 6
+        initial-interval: 2000
+  # Spring Boot 4 reads spring.mongodb.uri for the actual MongoClient; keep
+  # spring.data.mongodb.uri set to the same value too (some Spring Data code
+  # paths still read the old key) - see the deployment guide's Part 9.3 gotcha.
+  mongodb:
+    uri: ${MONGODB_URI:mongodb://localhost:27017/pulsefit_booking_db}
+  data:
+    mongodb:
+      uri: ${MONGODB_URI:mongodb://localhost:27017/pulsefit_booking_db}
+
+server:
+  port: ${SERVER_PORT:8083}
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_SERVER_URL:http://localhost:8761/eureka}
+  instance:
+    prefer-ip-address: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info

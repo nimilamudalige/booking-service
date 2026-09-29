@@ -1,0 +1,32 @@
+# Build output
+target/
+*.class
+*.jar
+!.mvn/wrapper/maven-wrapper.jar
+
+# Logs
+*.log
+logs/
+
+# IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+.settings/
+.project
+.classpath
+bin/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env / secrets - never commit real credentials
+.env
+*.env.local
+
+# Maven housekeeping
+HELP.md
+dependency-reduced-pom.xml
