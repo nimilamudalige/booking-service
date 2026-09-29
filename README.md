@@ -67,5 +67,5 @@ java -jar target/booking-service.jar
 
 - **Student Name:** Pasan Nimila
 - **Student Number:** 2301692034
-- **Slack Handle:** pasan_nimila (optional)
+- **Slack Handle:** pasan_nimila
 - **GCP Project ID:** pulsefit-capstone
